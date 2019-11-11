@@ -1,3 +1,4 @@
+
 /////////////////////////////////////////////////////////
 // Author:           ERIK CUBA
 // Assignment:       Homework_05
@@ -8,7 +9,6 @@
 // Description:
 //       This program adds words to a list then reorders
 //       the words in alphabetical  order
-//       Problem: when last sort is tail and start
 ////////////////////////////////////////////////////////
 #include <iostream>
 #include <string>
@@ -101,10 +101,7 @@ public:
     Node* Tail=NULL;
 
     int i;
-/* For the fix in this loop,  I see that theres a problem
-   when Start is pointing at tail, because you can load in
-   any number of words and always be cut down to the last two alphabetically, but I can't find an update to the
-   below loop control variable to fix the problem. */
+
    while(Start != NULL){
 
     // helper pointers to manipulate lists
@@ -135,7 +132,7 @@ public:
       }
 
       Tail = Min;
-      if(MinPrev == Start){
+      if(Min == Start){
         Start = Start->Next;
       }else{
         MinPrev->Next = Min->Next;
